@@ -1,0 +1,20 @@
+body{
+    background-color: whitesmoke;
+    color:black;
+    margin:auto;
+    padding:auto;
+}
+
+.joker {
+    background-image: url('svg/blob.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+    width:500px;
+    height:500px;
+    margin:auto;
+    text-align: center;
+    color:red;
+}
