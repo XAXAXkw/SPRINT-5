@@ -10,11 +10,22 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    border-radius: 25px;
+    box-shadow:20px 10px 20px grey;
 
 
-    width:500px;
+    width:800px;
     height:500px;
     margin:auto;
+    padding:25px;
     text-align: center;
     color:red;
 }
+.score-button{
+    margin:auto;
+background-color: rgba(0, 0, 0, 0);
+border:0px;
+display: flex;
+}
+
+

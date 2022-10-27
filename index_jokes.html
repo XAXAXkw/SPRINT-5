@@ -30,14 +30,20 @@
  <!-- result -->
 
 
-                 <h2 id="joke">Let's have some jokes!</h2></div>
+                 <p id="joke">Let's have some jokes!</p></div>
 
 
 
 
                  
                 </div>
-               <div class="col"><button type="button" class="btn btn-danger" onclick="getJoke()">New Joke</button</div>
+                <div class="container d-flex">
+                  <button class="score-button" ><img src="./svg/icon3" style="width:125px" data-score="3"></button>
+                  <button class="score-button" ><img src="./svg/icon2" style="width:125px" data-score="2"></button>
+                  <button class="score-button" ><img src="./svg/icon1" style="width:125px" data-score="1"></button>
+                </div>
+                <hr>
+               <div class="col"><button type="button" class="btn btn-danger" onclick="doIt()">Next Joke</button</div>
             </div> 
             </div>
     </div>
@@ -45,6 +51,7 @@
         
 
     <script src="./js/main.js"></script>
+    <script src="./js/joke.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
       integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
