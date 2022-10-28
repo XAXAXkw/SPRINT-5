@@ -4,7 +4,11 @@ body{
     margin:auto;
     padding:auto;
 }
-
+.aside{
+    float: left;
+    background-color: aliceblue;
+    color: dodgerblue;
+}
 .joker {
     background-image: url('svg/blob.svg');
     background-repeat: no-repeat;
@@ -20,12 +24,31 @@ body{
     padding:25px;
     text-align: center;
     color:red;
+
+
 }
 .score-button{
     margin:auto;
 background-color: rgba(0, 0, 0, 0);
 border:0px;
-display: flex;
+
+width:150px;
 }
+
+
+
+
+@media (max-width: 700px) {
+.joker{
+    width:300px;
+}
+
+.score-button{
+    margin:auto;
+background-color: rgba(0, 0, 0, 0);
+border:0px;
+
+width:100px;
+}}
 
 
