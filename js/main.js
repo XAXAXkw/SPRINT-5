@@ -4,11 +4,15 @@
 
 const reportAcudits = [];
 let goodJoke = {};
+const record =[];
 
 
 
 
-//__________________AWAITER 
+
+          
+
+//__________________AWAITER JOKES
 
 
 var __awaiter =
@@ -45,16 +49,25 @@ var __awaiter =
 
 
 
-
 function doIt() {
+
+
+    let loader=` <button class="score-button" ><img src="./svg/icon3.png" style="width:55px" data-score="3"></button>
+    <button class="score-button" ><img src="./svg/icon2.png" style="width:55px" data-score="2"></button>
+    <button class="score-button" ><img src="./svg/icon1.png" style="width:55px" data-score="1"></button>
+  `
+
+   document.getElementById('iconer').innerHTML=loader;
 
     var _a;
     return __awaiter(this, void 0, void 0, function* () {
         const data = yield getJoke();
         const jokeElement = document.getElementById("joke");
-        fetchedJoke = new Joke((_a = data.joke) !== null && _a !== void 0 ? _a : data.value);
+        let fetchedJoke = new Joke((_a = data.joke) !== null && _a !== void 0 ? _a : data.value);
         jokeElement.innerHTML = data.joke;
-        console.log(data.joke)
+        record.push(data.id)
+     
+       
     });
 }
 
@@ -88,10 +101,11 @@ function getJoke() {
                 "User-Agent": "IT Academy Student (https://github.com/XAXAXkw/SPRINT-5)",
             },
         }).then(function (goodJoke) {
-
+           
+            record.push(goodJoke.id);
             return goodJoke.json();
         });
-        console.log(goodJoke);
+      
         // typeof(goodJoke);
 
 
@@ -113,16 +127,18 @@ function printJoke(joke) {
     return __awaiter(this, void 0, void 0, function* () {
         const data = joke, jokeElement = document.getElementById("joke");
         goodJoke = new Joke((_a = data.joke) !== null && _a !== void 0 ? _a : data.value);
-        jokeElement.innerHTML = goodJoke.joke;
+        
+        
 
-
-        console.log(data);
+     
     });
 }
 
 
 
-const scoreButtons = document.querySelectorAll(".score-button");
+
+
+const scoreButtons = document.querySelectorAll(".iconer");
 
 
 scoreButtons.forEach(element => {
@@ -130,14 +146,17 @@ scoreButtons.forEach(element => {
 
         return __awaiter(this, void 0, void 0, function* () {
 
-
+          
+      
             const target = event.target;
             const score = parseInt(target.getAttribute("data-score"));
+            const id = record.find((o)=>o!=undefined);
+            
 
 
-            saveToHistory(score);
+            saveToHistory(score,id);
 
-            console.log(score);
+            
 
         });
     })
@@ -150,9 +169,11 @@ scoreButtons.forEach(element => {
 
 
 
-function saveToHistory(score) {
+function saveToHistory(score,id) {
+   
+    
     const currentDate = new Date();
-    const entry = { score: score, date: currentDate.toISOString() }
+    const entry = { score: score, date: currentDate.toISOString(),id:id }
     reportAcudits.push(entry);
     console.log(reportAcudits);
 }
