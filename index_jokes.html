@@ -13,10 +13,12 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <div class="main border border-2">
-        <div class="aside border border-2 d-inline">TIME | 00:00</div>
+  <body>  <div class="aside border border-2 d-inline" id="weather-now"><p>Loading...</p></div>
+    <div class="main border border-2 border-danger p-4 m-2">
+      
+      
         <div class="article">
+       
 
           
 
@@ -30,27 +32,24 @@
  <!-- result -->
 
 
-                 <p id="joke">Let's have some jokes!</p></div>
+                 <p id="display">Let's have some jokes!</p></div>
 
 
 
 
                  
                 </div>
-                <div class="container d-flex">
-                  <button class="score-button" ><img src="./svg/icon3.png" style="width:125px" data-score="3"></button>
-                  <button class="score-button" ><img src="./svg/icon2.png" style="width:125px" data-score="2"></button>
-                  <button class="score-button" ><img src="./svg/icon1.png" style="width:125px" data-score="1"></button>
-                </div>
+                <div class="iconer d-flex" id="iconer">
+                 </div>
                 <hr>
-               <div class="col"><button type="button" class="btn btn-danger" onclick="doIt()">Next Joke</button</div>
+               <div class="col"><button type="button" class="btn btn-danger" onclick="getJoke()">Next Joke</button</div>
             </div> 
             </div>
     </div>
 
         
 
-    <script src="./js/main.js"></script>
+    <script src="./js/main3.js"></script>
     <script src="./js/joke.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
